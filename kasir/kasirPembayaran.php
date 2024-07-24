@@ -74,7 +74,7 @@
 		</div>
     </div>
 </div>
-<script src="manifest/jquery-3.2.1.min.js"></script>
+<script src="manifest1/jquery-3.2.1.min.js"></script>
 <script>
 	$(document).ready(function(){
 		$('#jumjum').keyup(function(){

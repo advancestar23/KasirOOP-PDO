@@ -85,7 +85,7 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                        <script src="manifest/jquery-3.2.1.min.js"></script>
+                                        <script src="manifest1/jquery-3.2.1.min.js"></script>
                                         <script>
                                             $('#btdelete<?php echo $no; ?>').click(function(e){
                                                   e.preventDefault();

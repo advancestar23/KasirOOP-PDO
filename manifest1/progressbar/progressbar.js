@@ -1222,7 +1222,7 @@ var Tweenable = (function () {
    * }}
    * @private
    */
-  var formatManifest;
+  var formatmanifest1;
 
   // CONSTANTS
 
@@ -1432,12 +1432,12 @@ var Tweenable = (function () {
   /**
    * @param {Object} stateObject
    *
-   * @return {Object} An Object of formatManifests that correspond to
+   * @return {Object} An Object of formatmanifest1s that correspond to
    * the string properties of stateObject
    * @private
    */
-  function getFormatManifests (stateObject) {
-    var manifestAccumulator = {};
+  function getFormatmanifest1s (stateObject) {
+    var manifest1Accumulator = {};
 
     Tweenable.each(stateObject, function (prop) {
       var currentProp = stateObject[prop];
@@ -1445,29 +1445,29 @@ var Tweenable = (function () {
       if (typeof currentProp === 'string') {
         var rawValues = getValuesFrom(currentProp);
 
-        manifestAccumulator[prop] = {
+        manifest1Accumulator[prop] = {
           'formatString': getFormatStringFrom(currentProp)
           ,'chunkNames': getFormatChunksFrom(rawValues, prop)
         };
       }
     });
 
-    return manifestAccumulator;
+    return manifest1Accumulator;
   }
 
   /**
    * @param {Object} stateObject
-   * @param {Object} formatManifests
+   * @param {Object} formatmanifest1s
    * @private
    */
-  function expandFormattedProperties (stateObject, formatManifests) {
-    Tweenable.each(formatManifests, function (prop) {
+  function expandFormattedProperties (stateObject, formatmanifest1s) {
+    Tweenable.each(formatmanifest1s, function (prop) {
       var currentProp = stateObject[prop];
       var rawValues = getValuesFrom(currentProp);
       var rawValuesLength = rawValues.length;
 
       for (var i = 0; i < rawValuesLength; i++) {
-        stateObject[formatManifests[prop].chunkNames[i]] = +rawValues[i];
+        stateObject[formatmanifest1s[prop].chunkNames[i]] = +rawValues[i];
       }
 
       delete stateObject[prop];
@@ -1476,18 +1476,18 @@ var Tweenable = (function () {
 
   /**
    * @param {Object} stateObject
-   * @param {Object} formatManifests
+   * @param {Object} formatmanifest1s
    * @private
    */
-  function collapseFormattedProperties (stateObject, formatManifests) {
-    Tweenable.each(formatManifests, function (prop) {
+  function collapseFormattedProperties (stateObject, formatmanifest1s) {
+    Tweenable.each(formatmanifest1s, function (prop) {
       var currentProp = stateObject[prop];
       var formatChunks = extractPropertyChunks(
-        stateObject, formatManifests[prop].chunkNames);
+        stateObject, formatmanifest1s[prop].chunkNames);
       var valuesList = getValuesList(
-        formatChunks, formatManifests[prop].chunkNames);
+        formatChunks, formatmanifest1s[prop].chunkNames);
       currentProp = getFormattedValues(
-        formatManifests[prop].formatString, valuesList);
+        formatmanifest1s[prop].formatString, valuesList);
       stateObject[prop] = sanitizeRGBChunks(currentProp);
     });
   }
@@ -1629,7 +1629,7 @@ var Tweenable = (function () {
       sanitizeObjectForHexProps(currentState);
       sanitizeObjectForHexProps(fromState);
       sanitizeObjectForHexProps(toState);
-      this._tokenData = getFormatManifests(currentState);
+      this._tokenData = getFormatmanifest1s(currentState);
     },
 
     'beforeTween': function (currentState, fromState, toState, easingObject) {

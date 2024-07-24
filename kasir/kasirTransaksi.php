@@ -162,7 +162,7 @@
                                                 <a href="#" id="btdelete<?php echo $no; ?>" class="btn btn-danger">Batal</a>
                                             </td>
                                         </tr>
-                                        <script src="manifest/jquery-3.2.1.min.js"></script>
+                                        <script src="manifest1/jquery-3.2.1.min.js"></script>
                                         <script>
                                             $("#btdelete<?php echo $no; ?>").click(function(){
                                                 swal({
@@ -235,7 +235,7 @@
     </div>
 </div>
 
-<script src="manifest/jquery-3.2.1.min.js"></script>
+<script src="manifest1/jquery-3.2.1.min.js"></script>
 <script>
     $(document).ready(function(){
 
