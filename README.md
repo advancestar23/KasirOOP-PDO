@@ -1,5 +1,2 @@
-  #########
-  username dan password
-  #########
-
-  Username: presiden Password: admin123
+username dan password
+Username: presiden Password: admin123
